@@ -1,0 +1,576 @@
+@charset "UTF-8";
+
+/* M20W0324　斉鵬 */
+
+/* CSS Reset */
+body, dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6, pre, p,
+form, button, input, textarea, select,
+table, tr, td, th {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+i, em {
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b {
+    font-weight: normal;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: top;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input, textarea, select, a {
+    outline: none;
+}
+
+/* end of CSS Reset */
+
+
+/* common */
+/* body color/font-family */
+body {
+    background-color: #fff;
+    font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3",
+    "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+/* fix float */
+.clear-fix::after {
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+.clear-fix {
+    *zoom: 1;
+}
+
+/* length of row */
+.row {
+    position: relative;
+    width: 1140px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* left content/right content */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* image scale */
+.img-scale img {
+    transition: transform 1s;
+}
+
+.img-scale:hover img {
+    transform: scale(1.05);
+}
+
+/* pre/next button */
+.arrow-btn {
+    position: absolute;
+    top: 200px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25%;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow-btn:hover {
+    opacity: .5;
+}
+
+/* default a tag */
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #b4a078;
+}
+
+/* default main header */
+.header {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.header .title {
+    float: left;
+    margin-right: 20px;
+    line-height: 1.2em;
+    font-weight: 100;
+    font-size: 36px;
+}
+
+.header .more {
+    display: inline-block;
+    margin-left: 30px;
+    padding-top: 14px;
+    line-height: 1;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* default logo */
+.logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.logo span {
+    display: inline-block;
+    padding: 15px 0;
+    font-family: serif;
+    color: #333;
+}
+
+/* default contact */
+.contact li {
+    float: left;
+    text-align: center;
+}
+
+.contact li a {
+    color: #fff;
+}
+
+.contact li span {
+    font-size: 14px;
+}
+
+/* default info */
+.info {
+    height: 80px;
+    line-height: 80px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* end of common */
+
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 174px;
+    z-index: 999;
+}
+
+/* navigation-site */
+.site-nav {
+    height: 50px;
+    line-height: 50px;
+    background-color: #333;
+}
+
+.site-nav .social-icon li {
+    float: left;
+}
+
+.site-nav .social-icon li a {
+    width: 30px;
+    line-height: 50px;
+    color: #fff;
+}
+
+.site-nav .social-icon li a:hover,
+.site-nav .contact li:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.site-nav .contact li {
+    margin-left: 20px;
+    line-height: 50px;
+}
+
+/* navigation-func */
+.func-nav {
+    height: 124px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+    background-color: #fff;
+}
+
+.func-nav .logo {
+    padding: 35px 0;
+}
+
+.func-nav .menu li {
+    float: left;
+    margin: 50px 0 50px 20px;
+}
+
+.func-nav .menu li a.active {
+    color: #b4a078;
+}
+
+/* end of header */
+
+/* main position */
+#main-index, #main-contact,
+#main-service, #main-about {
+    position: relative;
+    top: 174px;
+}
+
+/* end of main position */
+
+/* footer */
+#footer {
+    position: relative;
+    top: 174px;
+    height: 300px;
+    line-height: 1;
+    background-color: #333;
+}
+
+#footer .logo {
+    margin: 123px 0;
+}
+
+#footer .logo span {
+    color: #fff;
+}
+
+#footer .contact li {
+    margin: 121px 0 20px 20px;
+    line-height: 20px;
+}
+
+#footer .contact a {
+    font-size: 20px;
+}
+
+#footer .contact a span {
+    font-size: 16px;
+}
+
+#footer .copyright {
+    margin-left: 20px;
+    color: #fff;
+}
+
+/* end of footer */
+
+/* index(home) page main */
+/* slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider .pre {
+    left: 60px;
+}
+
+.slider .next {
+    right: 60px;
+}
+
+.slider .image {
+    height: 450px;
+    text-align: center;
+}
+
+.slider img {
+    width: 100%;
+}
+
+.slider .content {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    width: 1140px;
+    margin: 0 auto;
+    transform: translateY(50%);
+    text-align: left;
+    color: #fff;
+}
+
+.slider .page-list {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.slider .page-list li {
+    display: inline-block;
+}
+
+.slider .page-list button {
+    border-radius: 50%;
+    border: none;
+    width: 8px;
+    height: 8px;
+    margin: 0 8px 10px;
+}
+
+.slider .page-list button:hover,
+.slider .page-list .active button {
+    box-shadow: 0 0 0 4px #dfcead;
+    background: #a7936e;
+    border-radius: 500px;
+    border: none;
+    cursor: pointer;
+}
+
+/* case */
+.case-example {
+    height: 856px;
+    border-top: 1px solid rgba(0, 0, 0, .05);
+    background: #f0f1f3;
+}
+
+.case-example .content {
+    margin-right: -30px;
+}
+
+.case-example .case {
+    position: relative;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.case-example .case .image {
+    width: 360px !important;
+    overflow: hidden;
+}
+
+.case-example .case img {
+    width: 360px;
+    height: 240px;
+}
+
+/* end of index page */
+
+/* contact page main */
+/* contact */
+.content .item {
+    display: flex;
+    float: left;
+    width: 378px;
+    height: 142px;
+    border: 1px solid #f0ece4;
+    border-left: none;
+    background-color: #f7f7f7;
+}
+
+.content .item.first {
+    border-left: 1px solid #f0ece4;
+}
+
+.content .item i {
+    padding-top: 59px;
+    padding-left: 75px;
+    font-size: 24px;
+    color: #36b1af;
+}
+
+.content .item .content {
+    padding-top: 45px;
+    padding-left: 30px;
+}
+
+.content .item .content div {
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+/* contact form */
+#main-contact .contact {
+    margin-top: 64px;
+    margin-bottom: 72px;
+}
+
+#main-contact .contact .left,
+#main-contact .contact .right {
+    width: 50%;
+}
+
+#main-contact .contact label {
+    font-weight: normal;
+    color: #7d7f80;
+}
+
+#main-contact .contact input,
+#main-contact .contact textarea {
+    width: 90%;
+    padding: 15px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ebeeef;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    color: #777;
+}
+
+#main-contact .contact input:focus,
+#main-contact .contact textarea:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#main-contact .contact .advice {
+    margin-left: 23px;
+}
+
+#main-contact .contact textarea {
+    height: 122px;
+    margin-left: 23px;
+}
+
+#main-contact .contact .button {
+    margin-left: 23px;
+    width: 545px;
+    border: 1px solid #ef9632;
+    background-color: #ef9632;
+    color: #fff;
+}
+
+#main-contact .contact .button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/* end of contact page */
+
+/* about page */
+/* company */
+.company {
+    border-bottom: 1px solid #f0f1f3;
+}
+
+.company .content {
+    display: flex;
+    margin-bottom: 93px;
+}
+
+.company .content img {
+    width: 360px;
+    height: 256px;
+}
+
+.company .content p {
+    width: 50%;
+    padding: 10px 0 0 50px;
+}
+
+/* team */
+.team {
+    border-top: 1px solid rgba(0, 0, 0, .05);
+    background: #f0f1f3;
+}
+
+.team .member {
+    position: relative;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 93px;
+}
+
+.team .member .image {
+    width: 360px !important;
+    overflow: hidden
+}
+
+.team .member img {
+    width: 360px;
+}
+
+.team .member .info {
+    width: 358px;
+    border: 1px solid #f0ece4;
+}
+
+.team .member.last {
+    margin-right: 0;
+}
+
+/* end of about page */
+
+/* service page */
+.content .service .image {
+    float: left;
+}
+
+.content .service .introduction {
+    float: left;
+    margin-top: 20px;
+}
+
+.content .service.first {
+    margin-bottom: 60px;
+}
+
+.content .service.first .image {
+    margin-top: 100px;
+}
+
+.content .service.first img {
+    width: 450px;
+}
+
+.content .service.first .introduction {
+    width: 640px;
+    margin-left: 50px;
+}
+
+.content .service.second {
+    margin-bottom: 93px;
+}
+
+.content .service.second .image {
+    margin-top: 50px;
+}
+
+.content .service.second img {
+    width: 450px;
+}
+
+.content .service.second .introduction {
+    width: 640px;
+    margin-right: 50px;
+}
+
+/* end of service page */
